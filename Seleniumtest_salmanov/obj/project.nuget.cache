@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d+29Q8lz0GgRCjY0J41u61QWqWTuhbW+lkch1tFtDTnsKMHSs7LMWEjG9kZCCD4O3bJNLyIck6z7exssFgoAKQ==",
+  "dgSpecHash": "8LgbgHOsVNCxd4S+dWzpbsOsr/zbSwNjD4WuVCNL6tmEOafx4GgN9GzQZypRMvknq/WCRj9I4fpgvAXR1T1+WA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\seleniumtests\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.codecoverage\\17.10.0-release-24177-07\\microsoft.codecoverage.17.10.0-release-24177-07.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.net.test.sdk\\17.10.0-release-24177-07\\microsoft.net.test.sdk.17.10.0-release-24177-07.nupkg.sha512",

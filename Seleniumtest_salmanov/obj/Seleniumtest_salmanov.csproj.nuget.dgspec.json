@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\seleniumtests\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj": {}
+    "C:\\Users\\user\\Desktop\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\seleniumtests\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj": {
+    "C:\\Users\\user\\Desktop\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\seleniumtests\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj",
         "projectName": "Seleniumtest_salmanov",
-        "projectPath": "C:\\Users\\user\\Desktop\\seleniumtests\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\seleniumtests\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
