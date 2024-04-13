@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "d+29Q8lz0GgRCjY0J41u61QWqWTuhbW+lkch1tFtDTnsKMHSs7LMWEjG9kZCCD4O3bJNLyIck6z7exssFgoAKQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\Desktop\\seleniumtests\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.codecoverage\\17.10.0-release-24177-07\\microsoft.codecoverage.17.10.0-release-24177-07.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.net.test.sdk\\17.10.0-release-24177-07\\microsoft.net.test.sdk.17.10.0-release-24177-07.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.10.0-release-24177-07\\microsoft.testplatform.objectmodel.17.10.0-release-24177-07.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.testplatform.testhost\\17.10.0-release-24177-07\\microsoft.testplatform.testhost.17.10.0-release-24177-07.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\nunit\\4.1.0\\nunit.4.1.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\selenium.webdriver\\4.19.0\\selenium.webdriver.4.19.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}
