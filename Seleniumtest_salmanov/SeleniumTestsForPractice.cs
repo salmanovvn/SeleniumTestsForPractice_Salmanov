@@ -16,6 +16,17 @@ public class SeleniumTestsForPractice
         options.AddArguments("--no-sandbox",
             "--start-maximized", "--disable-extensions");
         var driver = new ChromeDriver(options);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //
+        // Implicit Wait можно использовать для:
+        //
+        // ожидания полной загрузки страницы — pageLoadTimeout();
+        // ожидания появления элемента на странице — implicitlyWait();
+        // ожидания выполнения асинхронного запроса — setScriptTimeout();
+        //
+        
+        
         // перейти на хост
         driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru");
         // ввести логин,пароль
@@ -50,14 +61,32 @@ public class SeleniumTestsForPractice
         var confirmCreation = driver.FindElement(By.ClassName("react-ui-j884du"));
         confirmCreation.Click();
         //перейти в новое сообщество
+        // Thread.Sleep(2000);
+        // var pageNewCommunity = driver.FindElement(By.ClassName("sc-eCApnc"));
+        // pageNewCommunity.Click();
         Thread.Sleep(2000);
-        var pageNewCommunity = driver.FindElement(By.ClassName("sc-eCApnc"));
-        pageNewCommunity.Click();
+        // //kebab menu
+        //
+        // var kebabMenu = driver.FindElement(By.ClassName("gkKHtQ"));
+        // kebabMenu.Click();
+        // var settings = driver.FindElement(By.ClassName("sc-eWnToP"));
+        // settings.Click();
+        // Thread.Sleep(2000);
+        var deleteCommunity = driver.FindElement(By.ClassName("jzrpUm"));
+        deleteCommunity.Click();
+        Thread.Sleep(2000);
+        var confirmDeleteCommunity = driver.FindElement(By.ClassName("react-ui-j884du"));
+        confirmDeleteCommunity.Click();
+        
+         //проверить что нужная страница
+        var currentUrl = driver.Url;
+        Assert.That(currentUrl=="https://staff-testing.testkontur.ru/news");
+        
         // var searchByName = driver.FindElement(By
         // searchByName.Click();
         //xpath = " //input[@name='passwd'] ";
         //выйти
-        //driver.Quit();
+        driver.Quit();
     }
    
     // public void CreateCommunity()
