@@ -27,6 +27,7 @@ public class SeleniumTestsForPractice
         var enter = driver.FindElement(By.Name("button"));
         enter.Click();
         Thread.Sleep(3000);
+        //await Task.Delay(5000);
         // проверить что нужная страница
         var currentUrl = driver.Url;
         Assert.That(currentUrl=="https://staff-testing.testkontur.ru/news");
@@ -34,4 +35,5 @@ public class SeleniumTestsForPractice
         //выйти
         driver.Quit();
     }
+    
 }
