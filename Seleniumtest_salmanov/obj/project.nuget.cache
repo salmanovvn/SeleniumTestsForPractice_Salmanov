@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8LgbgHOsVNCxd4S+dWzpbsOsr/zbSwNjD4WuVCNL6tmEOafx4GgN9GzQZypRMvknq/WCRj9I4fpgvAXR1T1+WA==",
+  "dgSpecHash": "/o5g5raOEtjlm9VDsGy7W0fXDFkWfxyIgyj75WffUjS9ITFlsWYLcpSmaQwr2ZRvyfPtbVMATtOVdGv/WJlEXw==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\Desktop\\Seleniumtest_salmanov\\Seleniumtest_salmanov\\Seleniumtest_salmanov.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\nunit\\4.1.0\\nunit.4.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\selenium.webdriver\\4.19.0\\selenium.webdriver.4.19.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\seleniumextras.waithelpers\\1.0.2\\seleniumextras.waithelpers.1.0.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",

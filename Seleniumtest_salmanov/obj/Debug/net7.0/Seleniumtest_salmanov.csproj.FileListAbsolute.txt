@@ -193,3 +193,4 @@ C:\Users\user\Desktop\Seleniumtest_salmanov\Seleniumtest_salmanov\obj\Debug\net7
 C:\Users\user\Desktop\Seleniumtest_salmanov\Seleniumtest_salmanov\obj\Debug\net7.0\Seleniumtest_salmanov.pdb
 C:\Users\user\Desktop\Seleniumtest_salmanov\Seleniumtest_salmanov\obj\Debug\net7.0\Seleniumtest_salmanov.genruntimeconfig.cache
 C:\Users\user\Desktop\Seleniumtest_salmanov\Seleniumtest_salmanov\obj\Debug\net7.0\ref\Seleniumtest_salmanov.dll
+C:\Users\user\Desktop\Seleniumtest_salmanov\Seleniumtest_salmanov\bin\Debug\net7.0\SeleniumExtras.WaitHelpers.dll
