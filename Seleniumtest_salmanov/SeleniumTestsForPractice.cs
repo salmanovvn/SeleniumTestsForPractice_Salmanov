@@ -10,6 +10,7 @@ namespace Seleniumtests_salmanov;
 public class SeleniumTestsForPractice
 {
     public WebDriver driver;
+    
 
     [SetUp]
     public void Authorize()
@@ -17,36 +18,29 @@ public class SeleniumTestsForPractice
         ChromeOptions options = new ChromeOptions();
         options.AddArguments("--no-sandbox",
             "--start-maximized", "--disable-extensions");
-        //driver = new ChromeDriver(options);
-        driver = new ChromeDriver();
-        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+        driver = new ChromeDriver(options);
+        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru");
-        //IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10)); 
-        //IWebElement element = wait.Until(ExpectedConditions. ElementToBeClickable(By.CssSelector("input[name='Username']")));
         IWebElement login = driver.FindElement(By.Id("Username"));
         login.SendKeys("oooethalon@yandex.ru");
         IWebElement pass = driver.FindElement(By.Id("Password"));
         pass.SendKeys("PerfectDays2!");
-        // войти 
         IWebElement enter = driver.FindElement(By.Name("button"));
         enter.Click();
     }
 
-    [Test]
-public void Authorization()
+    [Test] //1
+public void AuthorizationGetToNews()
 {
-    IWebElement current = driver.FindElement(By.CssSelector("img[alt='Логотип']"));
+    IWebElement current = driver.FindElement(By.CssSelector("div[data-tid='Feed']"));
     current.Should().NotBeNull();
 }
-    [Test]
+    [Test] //2
     public void GetCommunity()
     {
         Thread.Sleep(3000); //увидеть чтоб открылись сообщества
-        IWebElement sideMenu = driver.FindElement(By.CssSelector("button[data-tid='SidebarMenuButton']"));
-        sideMenu.Click();
-
-        IWebElement communityButton =
-            driver.FindElement(By.XPath("/html/body/div[2]/div/div[2]/div/div[3]/div/div[1]/div[2]/div/a[4]"));
+        IWebElement communityButton=
+            driver.FindElements(By.CssSelector("a[data-tid='Community']"))[0];
         communityButton.Click();
         IWebElement communityHeader = driver.FindElement(By.CssSelector("section[data-tid='PageHeader']"));
         communityHeader.Should().NotBeNull();
@@ -55,19 +49,26 @@ public void Authorization()
         Thread.Sleep(3000); //увидеть чтоб открылись сообщества
     }
 
-    [Test]
+    [Test] //3
     public void CreateCommunity()
     {
         GetCommunity();            
-        IWebElement createCommunity = driver.FindElement(By.CssSelector("svg[viewBox='0 0 18 18']"));
-        createCommunity.Click();IWebElement nameCommunity = driver.FindElement(By.CssSelector("label[data-tid='Name']"));
-        nameCommunity.SendKeys("name");
+        IWebElement createCommunity = driver.FindElement(By.XPath("//*[@id=\"root\"]/section/section[2]/section/div[2]/span/button"));
+        createCommunity.Click();
+        IWebElement nameCommunity = driver.FindElement(By.CssSelector("label[data-tid='Name']"));
+        string name = "1name";
+        nameCommunity.SendKeys(name);
         IWebElement descriptionCommunity = driver.FindElement(By.CssSelector("label[data-tid='Message']"));
         descriptionCommunity.SendKeys("name1");
         IWebElement confirmCreation = driver.FindElement(By.CssSelector("span[data-tid='CreateButton']"));
         confirmCreation.Click();
-        DeleteCommunity();        }
-    public void DeleteCommunity()
+        IWebElement getToNewCommunity =
+            driver.FindElement(By.XPath("//*[@id=\"root\"]/section/section[2]/section/span/a"));
+        getToNewCommunity.Click();
+        string checkName = driver.FindElement(By.CssSelector("div[data-tid='Title']")).Text;
+        checkName.Should().Be(name);
+    }
+    public void DeleteCommunityInSettings()
     {
         IWebElement deleteCommunity = driver.FindElement(By.CssSelector("button[data-tid='DeleteButton']"));
         deleteCommunity.Click();
@@ -77,54 +78,83 @@ public void Authorization()
         //Assert.That(currentUrl=="https://staff-testing.testkontur.ru/news");        
     }
 
-    //[Test]
-    public void DropDowmMenu()
+    [Test] //5
+    public void GetToEditProfile()
     {
         IWebElement dropDownMenu = driver.FindElement(By.CssSelector("div[data-tid='Avatar']"));
         dropDownMenu.Click();
         IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        Thread.Sleep(3000);
-        //IWebElement waitForMenu = wait.Until(ExpectedConditions.ElementIsVisible(
-        //    By.CssSelector(
-        //       "body > div.react-ui > div > div > div > div > div > div > span.sc-iGkqmO.ckwDLe.react-ui-162kz0e > span")));
-        dropDownMenu.Click();
-        Thread.Sleep(3000);
-        //IWebElement waitForMenu = wait.Until.not(ExpectedConditions.ElementToBeClickable(
-        //    By.CssSelector(
-        //      "body > div.react-ui > div > div > div > div > div > div > span.sc-iGkqmO.ckwDLe.react-ui-162kz0e > span"))));
-        
-        //
-
+        IWebElement editProfile = driver.FindElement(By.CssSelector("span[data-tid='ProfileEdit']"));
+        editProfile.Click();
+        string currentUrl = driver.Url;
+        currentUrl.Should().Be("https://staff-testing.testkontur.ru/profile/settings/edit");
     }
 
-    [Test]
+    [Test] //6
     public void ChangeSecondEmail()
     {
-        Thread.Sleep(3000);
         driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru/profile/settings/edit");
-        //Thread.Sleep(7000);
-        // String h1community = driver.FindElement(By.CssSelector("#root > section > section.sc-ckTSus.kVjkXt > section.sc-fujyAs.sc-crzoAE.cZJxtI.DykGo > div.sc-ksluID.kFmqyc > h1")).Text;
-        // h1community.Should().Be("Сообщества");
-        // IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        // IWebElement waitForEdit = wait.Until(ExpectedConditions.ElementIsVisible(
-        //      By.CssSelector(
-        //         "#root > section > section.sc-ckTSus.kVjkXt > section.sc-fujyAs.sc-crzoAE.cZJxtI.DykGo > div.sc-eYWepU.klKumv > button:nth-child(1)")));
-        //
-        //String h1EditProfile = driver.FindElement(By.XPath("#root > section > section.sc-ckTSus.kVjkXt > section.sc-fujyAs.sc-crzoAE.cZJxtI.DykGo > div.sc-ksluID.kFmqyc > h1")).Text;
-        //h1EditProfile.Should().Be("Редактирование профиля");
         IWebElement secondEmail = driver.FindElement(By.XPath("//*[@id=\"root\"]/section/section[2]/section[3]/div[2]/div[3]/label[2]/span[2]/input"));
-
         secondEmail.SendKeys(Keys.Control+"a");
-        //Thread.Sleep(3000);
         secondEmail.SendKeys(Keys.Backspace);
-        //Thread.Sleep(3000);
         secondEmail.SendKeys("second@SecondEmail.ru");
-        //Thread.Sleep(3000);
-        IWebElement confirmChange = driver.FindElement(By.CssSelector("button[class='sc-juXuNZ kVHSha']"));
+        IWebElement confirmChange = driver.FindElement(By.XPath("//*[@id=\"root\"]/section/section[2]/section[1]/div[2]/button[1]"));
         confirmChange.Click();
-        //Thread.Sleep(3000);
+    }
+    
+    
+    [Test] //7
+    public void GetToSettingsMyCommunity() 
+    {
+        
+        driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru/communities");
+        IWebElement myCommunity = driver.FindElements(By.CssSelector("a[data-tid='Item']"))[2];
+        myCommunity.Click();
+        IWebElement chooseFirstCommunity = driver.FindElements(By.CssSelector("a[data-tid='Link']")).First(el => el.Displayed);
+        chooseFirstCommunity.Click();
+        IWait<IWebDriver> wait=new WebDriverWait(driver, TimeSpan.FromSeconds(10)); 
+        IWebElement element = wait.Until(ExpectedConditions. ElementToBeClickable(By.CssSelector("div[data-tid='Title']")));
+        IWebElement dropdownButton = driver.FindElements(By.CssSelector("div[data-tid='DropdownButton']"))[1];
+        dropdownButton.Click();
+    
+        IWebElement settings = driver.FindElement(By.CssSelector("span[data-tid='Settings']"));
+        settings.Click();
+        //string currentUrl = driver.Url;
+        //Assert.That(currentUrl=="https://staff-testing.testkontur.ru/news");        
     }
 
+    [Test] //8
+    public void DeleteCommunity()
+    {
+        GetToSettingsMyCommunity();
+        DeleteCommunityInSettings();
+        AuthorizationGetToNews();
+    }
+
+    [Test] //8
+    public void SearchAccounts()
+    {
+        Thread.Sleep(3000);
+        IWebElement inputForSearch = driver.FindElement(By.XPath("//*[@id=\"root\"]/div/header/div/div[2]/div/span2828"));  
+        Console.WriteLine("yes");
+        inputForSearch.Click();
+        Console.WriteLine("yes");
+        Thread.Sleep(3000);
+        inputForSearch.SendKeys("Виктор Салманов");
+        Console.WriteLine("yes");
+        Thread.Sleep(3000);
+        inputForSearch.SendKeys(Keys.Enter);
+        Thread.Sleep(3000);
+        IWebElement chooseFirst =
+      driver.FindElements(By.CssSelector("button[data-tid='ComboBoxMenu__item']")).First(el => el.Displayed);
+        chooseFirst.Click();
+        string currentUrl = driver.Url;
+        currentUrl.Should().Be("https://staff-testing.testkontur.ru/profile/eb2fe5a6-85ae-4f7b-bc91-d42f3a39fd8d");
+        // IWebElement inputForSearch = driver.FindElement(By.CssSelector("div[title='Виктор Салманов']"));
+        // inputForSearch.SendKeys("Виктор Салманов");
+              
+    }
+    
 
 
 
@@ -134,5 +164,63 @@ public void Authorization()
     { driver.Quit();}
 
 }
-// IWebElement h1News = driver.FindElement(By.CssSelector("[data-tid='Title']"));
-// h1News.Should().NotBeNull();
+
+
+public class TestStaffWithNoMaximizedWindow
+{
+    public WebDriver driver;
+
+    [SetUp]
+    public void Authorize()
+    {
+        driver = new ChromeDriver();
+        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+        driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru");
+        IWebElement login = driver.FindElement(By.Id("Username"));
+        login.SendKeys("oooethalon@yandex.ru");
+        IWebElement pass = driver.FindElement(By.Id("Password"));
+        pass.SendKeys("PerfectDays2!");
+        IWebElement enter = driver.FindElement(By.Name("button"));
+        enter.Click();
+    }
+    [Test]
+    public void GetCommunity()
+    {
+        Thread.Sleep(3000); //увидеть чтоб открылись сообщества
+        IWebElement sideMenu = driver.FindElement(By.CssSelector("button[data-tid='SidebarMenuButton']"));
+        sideMenu.Click();
+        IWebElement communityButton =
+            driver.FindElement(By.XPath("/html/body/div[2]/div/div[2]/div/div[3]/div/div[1]/div[2]/div/a[4]"));
+        communityButton.Click();
+        IWebElement communityHeader = driver.FindElement(By.CssSelector("section[data-tid='PageHeader']"));
+        communityHeader.Should().NotBeNull();
+        string currentUrl = driver.Url;
+        currentUrl.Should().Be("https://staff-testing.testkontur.ru/communities");
+        Thread.Sleep(3000); //увидеть чтоб открылись сообщества
+    }
+    [TearDown] 
+    public void TearDown()
+    { driver.Quit();}
+}
+
+// IWait<IWebDriver> wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10)); 
+// IWebElement element = wait.Until(ExpectedConditions. ElementToBeClickable(By.CssSelector("input[name='Username']")));
+// IWebElement communityButton =
+//       driver.FindElements(By.CssSelector("a[data-tid='Community']")).First(el => el.Displayed);
+
+
+
+//driver.FindElements(By.CssSelector("[data-tid='Input']")) ищет на странице все элементы, и возвращает массив, да, а там с нуля
+// driver.FindElements(By.CssSelector("[data-tid='Input']"))[2];
+// private bool IsElementPresent(By by)   
+// {
+//     try
+//     {
+//         driver.FindElement(by);
+//         return true;
+//     }
+//     catch (NoSuchElementException)
+//     {
+//         return false;
+//     }
+// }
