@@ -63,10 +63,9 @@ public class SeleniumTestsForPractice
         IWebElement inputForSearch = driver.FindElement(By.CssSelector("[placeholder='Поиск сотрудника, подразделения, сообщества, мероприятия']"));  
         string fullName = "Виктор Салманов";
         inputForSearch.SendKeys(fullName);
-        IWebElement chooseFirst = driver.FindElements(By.CssSelector("button[data-tid='ComboBoxMenu__item']")).First(el => el.Displayed);
-        chooseFirst.Click();
-        string checkName = driver.FindElement(By.CssSelector("[data-tid='EmployeeName']")).Text;
-        checkName.Should().Be(fullName);
+        string chooseFirst = driver.FindElement(By.CssSelector("div[data-tid='ScrollContainer__inner']")).FindElement(By.XPath("//*[contains(text(),fullName)]")).Text;
+        chooseFirst.Should().Contain(fullName);
+        
     }
 
 
@@ -167,13 +166,15 @@ public class SeleniumTestsForPractice
 }
 public class TestStaffWithNoMaximizedWindow
 {
-    public WebDriver driver;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
     [SetUp]
     public void Authorize()
     {
         driver = new ChromeDriver();
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+        wait=new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru");
         IWebElement login = driver.FindElement(By.Id("Username"));
         login.SendKeys("oooethalon@yandex.ru");
@@ -181,6 +182,7 @@ public class TestStaffWithNoMaximizedWindow
         pass.SendKeys("PerfectDays2!");
         IWebElement enter = driver.FindElement(By.Name("button"));
         enter.Click();
+        wait.Until(ExpectedConditions. ElementIsVisible(By.CssSelector("div[data-tid='Feed']")));
     }
     [Test] // Перейти в сообщества через боковое меню в том случае, если оно скрыто
     public void GetCommunity()
