@@ -1,28 +1,27 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9067f039_002D47fe_002D493a_002Db30c_002D43df4e7ce9a2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetCommunity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.TestStaffWithNoMaximizedWindow.GetCommunity&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.GetCommunity&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.DeleteMyCommunity&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.GetToSettingsMyCommunity&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.Authorization&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.GetToEditProfile&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.CreateCommunity&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.DeleteCommunity&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c4a7f3d7_002Da84c_002D41f7_002D9982_002Da4c59c334b11/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Solution /&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e1f0de63_002D856d_002D44ac_002D8e0a_002Db57564b4ad2f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ChangeSecondEmail" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=26ad899b_002Dd082_002D4d4c_002Db3f2_002D7e7a5d1aae0c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateDiscussion #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.ChangeSecondEmail&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.GetCommunity&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.Authorization&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.CreateCommunity&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.DropDownMenu&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.SearchAccounts&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.TestStaffWithNoMaximizedWindow.GetCommunity&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9dca426b_002Db4df_002D4452_002D882e_002D8c735baea2ae/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateDiscussion" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.CreateDiscussion&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestRunner/SpawnedProcessesKnownList/=conhost_002Eexe/@EntryIndexedValue">KillOrphaned</s:String></wpf:ResourceDictionary>
