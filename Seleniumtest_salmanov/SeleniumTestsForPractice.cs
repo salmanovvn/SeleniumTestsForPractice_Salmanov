@@ -188,7 +188,10 @@ public class SeleniumTestsForPractice
     
     [TearDown] 
     public void TearDown()
-    { driver.Quit();}
+    {
+        driver.Close();
+        driver.Quit();
+    }
 }
 public class TestStaffWithNoMaximizedWindow
 {
@@ -231,5 +234,8 @@ public class TestStaffWithNoMaximizedWindow
     }
     [TearDown] 
     public void TearDown()
-    { driver.Quit();}
+    {
+        driver.Close();
+        driver.Quit();
+    }
 }
