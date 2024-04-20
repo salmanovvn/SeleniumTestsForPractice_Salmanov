@@ -13,21 +13,21 @@ public class SeleniumTestsForPractice
     private WebDriver driver;
     private WebDriverWait wait;
 
-    [OneTimeSetUp]
+    [OneTimeSetUp] //удаление всех сообществ кроме одного для тестов
     public void OneTimeSetUp()
     {
         SetUp();
         driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru/communities?activeTab=isAdministrator");
         try
         {
-            var lookingForCommunity = driver.FindElement(By.CssSelector("div[data-tid='Feed']")).FindElements(By.CssSelector("a[data-tid='Link']"));
+            IReadOnlyCollection<IWebElement> lookingForCommunity = driver.FindElement(By.CssSelector("div[data-tid='Feed']")).FindElements(By.CssSelector("a[data-tid='Link']"));
         }
         catch (Exception e)
         {
             throw;
         }
 
-        var allMyCommunity = driver.FindElement(By.CssSelector("div[data-tid='Feed']")).FindElements(By.CssSelector("a[data-tid='Link']"));
+        IReadOnlyCollection<IWebElement> allMyCommunity = driver.FindElement(By.CssSelector("div[data-tid='Feed']")).FindElements(By.CssSelector("a[data-tid='Link']"));
         int countMyCommunity = allMyCommunity.Count-1;
         for (int i = 0; i < countMyCommunity; i++)
         {
