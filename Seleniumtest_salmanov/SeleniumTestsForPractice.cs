@@ -13,34 +13,31 @@ public class SeleniumTestsForPractice
     private WebDriver driver;
     private WebDriverWait wait;
 
-    // [OneTimeSetUp]
-    // public void DeleteCommunities()
-    // {
-    //     SetUp();
-    //     CheckNews();
-    //     driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru/communities?activeTab=isAdministrator");
-    //     wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[data-tid='CommunitiesCounter']")));\
-    //         
-    //     try
-    //     {
-    //         IWebElement checkCommunityPresense = driver.FindElements(By.CssSelector("a[data-tid='Link']"))[0];
-    //         checkCommunityPresense.Should().NotBeNull();
-    //     }
-    //     catch (Exception e)
-    //     {
-    //         Console.WriteLine("There is no Community left.");
-    //     }
-    //     IWebElement chooseFirstCommunity = driver.FindElements(By.CssSelector("a[data-tid='Link']"))[0];
-    //     chooseFirstCommunity.Should().NotBeNull();
-    //     chooseFirstCommunity.Click();
-    //     wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[data-tid='Title']")));
-    //     IWebElement checkCommunity = driver.FindElement(By.CssSelector("div[data-tid='Title']"));
-    //     checkCommunity.Should().NotBeNull();
-    //     
-    //     
-    // }
+    [OneTimeSetUp]
+    public void OneTimeSetUp()
+    {
+        SetUp();
+        driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru/communities?activeTab=isAdministrator");
+        try
+        {
+            var lookingForCommunity = driver.FindElement(By.CssSelector("div[data-tid='Feed']")).FindElements(By.CssSelector("a[data-tid='Link']"));
+        }
+        catch (Exception e)
+        {
+            throw;
+        }
 
-
+        var allMyCommunity = driver.FindElement(By.CssSelector("div[data-tid='Feed']")).FindElements(By.CssSelector("a[data-tid='Link']"));
+        int countMyCommunity = allMyCommunity.Count-1;
+        for (int i = 0; i < countMyCommunity; i++)
+        {
+                GoToSettingsMyCommunity();
+                DeleteCommunityInSettings(); 
+                CheckNews();
+        }
+        driver.Close();
+        driver.Quit();
+    }
 
 
     [SetUp]
@@ -50,14 +47,11 @@ public class SeleniumTestsForPractice
         options.AddArguments("--no-sandbox",
             "--start-maximized", "--disable-extensions");
         driver = new ChromeDriver(options);
-        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(9);
-        wait=new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(4);
+        wait=new WebDriverWait(driver, TimeSpan.FromSeconds(5));
         Authorize();
 
     }
-    
-    
-    
     
     public void CheckNews()
     {
@@ -66,12 +60,13 @@ public class SeleniumTestsForPractice
     }
     public void DeleteCommunityInSettings()
     {
-        IWebElement deleteCommunity = driver.FindElement(By.CssSelector("button[data-tid='DeleteButton']"));
-        deleteCommunity.Click();
-        IWebElement confirmDeleteCommunity = driver.FindElement(By.ClassName("react-ui-button-caption"));
-        confirmDeleteCommunity.Click();
-        CheckNews();
+            IWebElement deleteCommunity = driver.FindElement(By.CssSelector("button[data-tid='DeleteButton']"));
+            deleteCommunity.Click();
+            IWebElement confirmDeleteCommunity = driver.FindElement(By.CssSelector("span[data-tid='DeleteButton']"));
+            confirmDeleteCommunity.Click();
+            CheckNews();
     }
+    
     public void Authorize()
     {
         string loginText = "oooethalon@yandex.ru";
@@ -107,7 +102,6 @@ public class SeleniumTestsForPractice
     [Test] //Попасть в сообщества через боковое меню
     public void GetCommunities()
     {
-        CheckNews();
         IWebElement communityButton=
             driver.FindElements(By.CssSelector("a[data-tid='Community']"))[0];
         communityButton.Click();
@@ -140,7 +134,7 @@ public class SeleniumTestsForPractice
     {
         CheckNews();
         driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru/communities?activeTab=isAdministrator");
-        wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[data-tid='CommunitiesCounter']")));
+        wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("h1[data-tid='Title']")));
         IWebElement chooseFirstCommunity = driver.FindElements(By.CssSelector("a[data-tid='Link']"))[0];
         chooseFirstCommunity.Click();
         wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[data-tid='Title']")));

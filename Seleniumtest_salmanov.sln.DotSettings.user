@@ -1,12 +1,44 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=26ad899b_002Dd082_002D4d4c_002Db3f2_002D7e7a5d1aae0c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateDiscussion #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=16414c56_002D41d5_002D4331_002Db10a_002D234ebb196dbb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateCommunity #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.CreateCommunity&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.OneTimeSetUp&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1e580adc_002Da76f_002D46dc_002Da03c_002D7d0e61b9086a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateCommunity #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=26ad899b_002Dd082_002D4d4c_002Db3f2_002D7e7a5d1aae0c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateDiscussion #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Solution /&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=802dddfc_002Dd1f0_002D4abb_002Da166_002D04a4bda6c2f6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateCommunity #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.CreateCommunity&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=87bd3ba3_002D5438_002D4bab_002D9068_002Dd52432a09e7f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateCommunity" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9dca426b_002Db4df_002D4452_002D882e_002D8c735baea2ae/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateDiscussion" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.CreateDiscussion&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.GoToMyLastCommunity&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.GetCommunities&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.DeleteCommunity&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.Authorization&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.SearchAccounts&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.CreateCommunity&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.GoToSettingsMyCommunity&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.GetToEditProfile&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.ChangeSecondEmail&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.TestStaffWithNoMaximizedWindow&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::DF085210-8F22-45AE-85D1-0DD8F6995DE5::net7.0::Seleniumtests_salmanov.SeleniumTestsForPractice.Delete&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestRunner/SpawnedProcessesKnownList/=chromedriver_002Eexe/@EntryIndexedValue">KillOrphaned</s:String>
 	
 	
 	
