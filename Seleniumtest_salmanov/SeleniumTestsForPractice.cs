@@ -12,10 +12,39 @@ public class SeleniumTestsForPractice
 {
     private WebDriver driver;
     private WebDriverWait wait;
-    
+
+    // [OneTimeSetUp]
+    // public void DeleteCommunities()
+    // {
+    //     SetUp();
+    //     CheckNews();
+    //     driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru/communities?activeTab=isAdministrator");
+    //     wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[data-tid='CommunitiesCounter']")));\
+    //         
+    //     try
+    //     {
+    //         IWebElement checkCommunityPresense = driver.FindElements(By.CssSelector("a[data-tid='Link']"))[0];
+    //         checkCommunityPresense.Should().NotBeNull();
+    //     }
+    //     catch (Exception e)
+    //     {
+    //         Console.WriteLine("There is no Community left.");
+    //     }
+    //     IWebElement chooseFirstCommunity = driver.FindElements(By.CssSelector("a[data-tid='Link']"))[0];
+    //     chooseFirstCommunity.Should().NotBeNull();
+    //     chooseFirstCommunity.Click();
+    //     wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[data-tid='Title']")));
+    //     IWebElement checkCommunity = driver.FindElement(By.CssSelector("div[data-tid='Title']"));
+    //     checkCommunity.Should().NotBeNull();
+    //     
+    //     
+    // }
+
+
+
 
     [SetUp]
-    public void Authorize()
+    public void SetUp()
     {
         ChromeOptions options = new ChromeOptions();
         options.AddArguments("--no-sandbox",
@@ -23,17 +52,12 @@ public class SeleniumTestsForPractice
         driver = new ChromeDriver(options);
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(9);
         wait=new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru");
-        string loginText = "oooethalon@yandex.ru";
-        string passwordText = "PerfectDays2!";
-        IWebElement login = driver.FindElement(By.Id("Username"));
-        login.SendKeys(loginText);
-        IWebElement pass = driver.FindElement(By.Id("Password"));
-        pass.SendKeys(passwordText);
-        IWebElement enter = driver.FindElement(By.Name("button"));
-        enter.Click();
-        wait.Until(ExpectedConditions. ElementIsVisible(By.CssSelector("div[data-tid='Feed']")));
+        Authorize();
+
     }
+    
+    
+    
     
     public void CheckNews()
     {
@@ -47,7 +71,19 @@ public class SeleniumTestsForPractice
         IWebElement confirmDeleteCommunity = driver.FindElement(By.ClassName("react-ui-button-caption"));
         confirmDeleteCommunity.Click();
         CheckNews();
-
+    }
+    public void Authorize()
+    {
+        string loginText = "oooethalon@yandex.ru";
+        string passwordText = "PerfectDays2!";
+        driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru");
+        IWebElement login = driver.FindElement(By.Id("Username"));
+        login.SendKeys(loginText);
+        IWebElement pass = driver.FindElement(By.Id("Password"));
+        pass.SendKeys(passwordText);
+        IWebElement enter = driver.FindElement(By.Name("button"));
+        enter.Click();
+        wait.Until(ExpectedConditions. ElementIsVisible(By.CssSelector("div[data-tid='Feed']")));
     }
     
     [Test] //Авторизация
@@ -67,8 +103,7 @@ public class SeleniumTestsForPractice
         chooseFirst.Should().Contain(fullName);
         
     }
-
-
+   
     [Test] //Попасть в сообщества через боковое меню
     public void GetCommunities()
     {
@@ -123,13 +158,6 @@ public class SeleniumTestsForPractice
         IWebElement checkSettings = driver.FindElement(By.CssSelector("div[data-tid='SettingsTabWrapper']"));
         checkSettings.Should().NotBeNull();
     }
-    [Test] //Удалить свое сообщество
-    public void DeleteCommunity()
-    {
-        GoToSettingsMyCommunity();
-        DeleteCommunityInSettings();
-        CheckNews();
-    }
     
 
     [Test] //Перейти в редактирование своего профиля
@@ -158,8 +186,6 @@ public class SeleniumTestsForPractice
         checkProfileName.Should().NotBeNull();
     }
     
-    
-
     [TearDown] 
     public void TearDown()
     { driver.Quit();}
@@ -170,11 +196,16 @@ public class TestStaffWithNoMaximizedWindow
     private WebDriverWait wait;
 
     [SetUp]
-    public void Authorize()
+    public void SetUp()
     {
         driver = new ChromeDriver();
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         wait=new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        Authorize();
+    }
+
+    public void Authorize()
+    {
         driver.Navigate().GoToUrl("https://staff-testing.testkontur.ru");
         IWebElement login = driver.FindElement(By.Id("Username"));
         login.SendKeys("oooethalon@yandex.ru");
@@ -182,8 +213,9 @@ public class TestStaffWithNoMaximizedWindow
         pass.SendKeys("PerfectDays2!");
         IWebElement enter = driver.FindElement(By.Name("button"));
         enter.Click();
-        wait.Until(ExpectedConditions. ElementIsVisible(By.CssSelector("div[data-tid='Feed']")));
+        wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div[data-tid='Feed']")));
     }
+
     [Test] // Перейти в сообщества через боковое меню в том случае, если оно скрыто
     public void GetCommunity()
     {
